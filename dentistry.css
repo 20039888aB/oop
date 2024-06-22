@@ -1,0 +1,61 @@
+/* Reset default margin and padding for all elements */
+:root{
+    --green:#cd0f87;
+    --black:rgb(77, 6, 105) ;
+    --light-color:#030303;
+    --box-shadow:.5rem .5rem 0 rgba(67, 236, 104, 0.2);
+    --text-shadow:.4rem .4rem 0 rgba(39, 184, 89, 0.2);
+    --border:.2rem solid var(--green);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the header */
+.header {
+    background-color: #fff; /* Set the background color */
+    color: #fff; /* Set the text color */
+    padding: 15px 20px; /* Add padding */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+}
+
+/* Style the logo */
+.logo {
+    text-decoration: none; /* Remove underline */
+    color: #66174e; /* Set text color */
+    font-weight: bold; /* Add bold font weight */
+    font-size: 24px; /* Set font size */
+}
+
+/* Style the navbar links */
+.navbar a {
+    text-decoration: none; /* Remove underline */
+    color: #000; /* Set text color to black */
+    margin: 0 15px; /* Add margin */
+    font-size: 18px; /* Increase font size */
+    font-weight: bold; /* Set font weight to bold */
+}
+
+/* Style the menu button icon */
+#menu-btn {
+    display: none; /* Hide the menu button by default */
+    cursor: pointer; /* Set cursor to pointer */
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 768px) {
+    /* Display the menu button on small screens */
+    #menu-btn {
+        display: block;
+    }
+
+    /* Hide the navbar links on small screens */
+    .navbar {
+        display: none;
+    }
+   

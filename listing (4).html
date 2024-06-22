@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimal family Hospital</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="dentistry.css">
+</head>
+<style>
+  /* External CSS for styles */
+  h1 {
+  text-align: center; /* Center align the heading */
+  transition: color 0.3s; /* Smooth transition for color change */
+}
+
+h1:hover {
+  color: purple; /* Change text color to purple on hover */
+}
+
+/* Container */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  padding: 20px; /* Adjust padding as needed */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* Card */
+.card {
+  width: calc(33.33% - 20px); /* Three cards per row with margins */
+  margin: 10px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  background-color: rgb(214, 237, 247); /* Light blue background */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Image */
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+/* Card Info */
+.card-info {
+  padding: 10px;
+}
+
+.card-info h2 {
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #333; /* Dark text color */
+  transition: color 0.3s; /* Smooth transition for text color */
+}
+
+.card-info p {
+  font-size: 14px;
+  color: #666; /* Gray text color */
+  transition: color 0.3s; /* Smooth transition for text color */
+}
+
+/* Description */
+.description {
+  display: none;
+  font-size: 14px;
+  color: #666; /* Gray text color */
+  transition: color 0.3s; /* Smooth transition for text color */
+}
+
+.description.show {
+  display: block;
+}
+
+/* Hover effect on card text */
+.card:hover .card-info h2,
+.card:hover .card-info p,
+.card:hover .description {
+  color: #b935c5; /* Blue text color on hover */
+}
+.importance-of-cleaning-teeth {
+  background-color: white; /* White background */
+  padding: 20px;
+  margin: 20px;
+}
+
+.importance-of-cleaning-teeth .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.importance-of-cleaning-teeth h2 {
+  text-align: center;
+}
+
+.importance-of-cleaning-teeth p {
+  color: #333; /* Dark text color */
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Hover effect on text */
+.hover-effect {
+  transition: color 0.3s;
+}
+
+.hover-effect:hover {
+  color: purple; /* Change text color on hover */
+}
+
+.footer .box-container{
+    display: grid;
+    background-color: #fff;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap:2rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color:var(--black);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    color:var(--light-color);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a i{
+    padding-right: .5rem;
+    color:var(--green);
+}
+
+.footer .box-container .box a:hover i{
+    padding-right:2rem;
+}
+
+.footer .credit{
+    padding: 1rem;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    color:var(--light-color);
+    border-top: .1rem solid rgba(244, 16, 16, 0.1);
+}
+
+.footer .credit span{
+    color:var(--green);
+}
+
+/* media queries  */
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: initial;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:115%; right: 2rem;
+        border-radius: .5rem;
+        box-shadow: var(--box-shadow);
+        width: 30rem;
+        border: var(--border);
+        background: #fff;
+        transform: scale(0);
+        opacity: 0;
+        transform-origin: top right;
+        transition: none;
+    }
+
+    .header .navbar.active{
+        transform: scale(1);
+        opacity: 1;
+        transition: .2s ease-out;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        display: block;
+        margin:2.5rem;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+.contact-right{
+    flex-basis: 100%;
+    width: 100%;
+    height: auto;
+    max-width: 1170px;
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 0;
+    overflow: hidden;
+   }
+   .footer .box-container .box h4{
+    font-size: 2.5rem;
+    color:var(--black);
+    padding: 1rem 0;
+ }  
+
+ 
+</style>
+<body bgcolor="#7FB3D5">
+   <header class="header">
+
+       <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> OPTIMAL FAMILY Hospital </a>
+       <nav class="navbar">
+           <a href="index.html">Home</a>
+           <a href="index.html">Services</a>
+           <a href="index.html">About</a>
+           <a href="index.html">Doctors</a>
+           <a href="index.html">Book</a>
+           <a href="index.html">Review</a>
+           <a href="index.html">Contacts</a>
+           <a href="index.html">Blogs</a>
+       </nav>
+    </header>
+   <h1>Here are the various dental expertise we have</h1>
+    <section class="cards-container">
+      <div class="card" onclick="toggleDescription(this)">
+        <img src="images/Female Dentist.jpeg" alt="Service 1">
+        <div class="card-info">
+          <h2>General Dentistry</h2>
+          <button class="my-button">Click Me</button>
+
+          <p class="description">General dentistry at Optimal Family Hospital provides comprehensive dental care 
+            for patients of all ages. Our skilled dentists focus on preventive care to maintain optimal oral health
+             and address common dental issues. Services include routine dental exams, cleanings, X-rays, fillings, 
+             and root canals. We also offer treatments for gum disease, tooth decay, and dental emergencies. With a 
+             focus on patient education and personalized care, our goal is to help you achieve and maintain a 
+             healthy smile for life.</p>
+        </div>
+      </div>
+      <div class="card" onclick="toggleDescription(this)">
+        <img src="images/photo.jpeg" alt="Service 1">
+        <div class="card-info">
+          <h2>cosmetic dentistry</h2>
+          <button class="my-button">Click Me</button>
+
+          <p class="description">Cosmetic dentistry at Optimal Family Hospital focuses on enhancing the appearance
+             of your smile. Our experienced dentists offer a variety of cosmetic treatments to improve the color, 
+             shape, size, and alignment of your teeth. Our cosmetic dentistry services include teeth whitening, 
+             dental veneers, dental bonding, orthodontic treatments (e.g., braces, clear aligners), dental implants,
+              and gum contouring. Whether you're looking to brighten your smile or correct imperfections, 
+              our cosmetic dentistry team is here to help you achieve the smile of your dreams. Schedule a 
+              consultation today to learn more about our personalized treatment options.</p>
+        </div>
+      </div>
+      <div class="card" onclick="toggleDescription(this)">
+        <img src="images/tooth.implant.jpeg" alt="Service 1">
+        <div class="card-info">
+          <h2>Implants</h2>
+          <button class="my-button">Click Me</button>
+
+          <p class="description">Implants at Optimal Family Hospital offer a permanent solution for missing teeth.
+             Our experienced implant specialists use state-of-the-art technology to restore your smile and improve 
+             oral health. Dental implants are titanium posts surgically placed into the jawbone, providing a strong
+              foundation for replacement teeth. Whether you're missing one tooth or multiple teeth, implants can 
+              restore function, aesthetics, and confidence. With proper care, implants can last a lifetime, making 
+              them a long-term investment in your oral health and well-being. Schedule a consultation today to learn
+               more about how implants can transform your smile. </p>
+        </div>
+      </div>
+      <div class="card" onclick="toggleDescription(this)">
+        <img src="images/African Girl With Braces Smiling To.jpeg" alt="Service 1">
+        <div class="card-info">
+          <h2>Braces/orthodentics </h2>
+          <button class="my-button">Click Me</button>
+
+          <p class="description">Braces/orthodontics at Optimal Family Hospital focus on correcting misaligned teeth and
+             bite issues. Our orthodontic specialists offer a range of treatments to straighten teeth and improve oral
+              health. Traditional braces use metal brackets and wires to gradually move teeth into proper alignment.
+               Clear aligners provide a discreet option for straightening teeth without metal braces. Whether you're a 
+               child, teen, or adult, orthodontic treatment can correct issues such as crooked teeth, overcrowding, 
+               overbites, underbites, and gaps between teeth. With personalized treatment plans and ongoing care,
+                we can help you achieve a straighter, healthier smile. Schedule a consultation today to discuss your
+                 orthodontic options.</p>
+        </div>
+      </div>
+      <div class="card" onclick="toggleDescription(this)">
+        <img src="images/Pediatric Dentistry Gainesville FL _ Children's Dentist - Park Avenue Dental.jpeg" alt="Service 1">
+        <div class="card-info">
+          <h2>Paediatric dentistry</h2>
+          <button class="my-button">Click Me</button>
+
+          <p class="description">Pediatric dentistry at Optimal Family Hospital is specialized dental care for children.
+             Our team ensures a positive experience for young patients while addressing their dental needs. We offer
+              services like exams, cleanings, fluoride treatments, sealants, and orthodontic evaluations. Our goal is to
+               promote good oral hygiene habits early and prevent dental problems. With a child-friendly environment and
+                gentle care, we make dental visits enjoyable. Schedule an appointment
+                 to keep your child's smile healthy.</p>
+        </div>
+      </div>
+      <section class="importance-of-cleaning-teeth">
+        <div class="container">
+          <h1>The Importance of Cleaning Your Teeth</h1>
+          <p><strong>Regularly cleaning your teeth is essential for maintaining good oral health. Brushing and flossing daily help remove plaque, bacteria, and food particles that can lead to tooth decay, gum disease, and bad breath. It's important to brush your teeth at least twice a day and floss once a day to effectively clean between teeth and along the gumline. Additionally, routine dental check-ups and professional cleanings are vital for detecting and preventing oral health issues. By prioritizing oral hygiene, you can keep your teeth and gums healthy, prevent dental problems, and maintain a bright smile for years to come.</strong></p>
+        </div>
+      </section>
+      
+      <!-- Repeat the above structure for other services -->
+    </section>
+    
+    <script>
+    function toggleDescription(card) {
+      card.querySelector('.description').classList.toggle('show');
+    }
+
+    </script>
+    <br>
+    
+    <section class="footer" id="contacts">
+
+      <div class="box-container">
+          <div class="box">
+          
+              <h3>Contacts</h3>
+              <a href="#"> <i class="fas fa-phone"></i> 0798712049 </a>
+              <a href="#"> <i class="fas fa-envelope"></i>optimalfamily@yahoo.com</a>
+              <a href="#"> <i class="fas fa-map-marker-alt"></i>Former Kimwa Building, Chuka Town </a>
+          </div>
+  
+          <div class="box">
+              <h3>follow us</h3>
+              <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+              <a href="#"> <i class="fab fa-twitter" aria-hidden="true"></i> twitter </a>
+              <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+              <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+              <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+          </div>
+  
+      </div>
+     <br>
+     <br>
+  <!-- custom js file link  -->
+  <script src="script.js"></script>
+  <script src="Google Sheet.js"></script>
+  
+  </div>
+  
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.750490186497!2d37.64436527337333!3d-0.3340973996626169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1827b90001156ea5%3A0x130833decc36c360!2sOPTIMAL%20FAMILY%20HOSPITAL%20LTD!5e0!3m2!1sen!2ske!4v1715189845819!5m2!1sen!2ske" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  
+  <div class="credit" style="text-align: center; cursor: pointer;" onmouseover="this.style.fontSize='20px'" onmouseout="this.style.fontSize=''">Copyright@2024 All rights reserved</div>
+  
+  </section>
